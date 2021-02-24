@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Weather Dashboard</h1>
+        
+        <div>
+            <h2>Search goes here</h2>
+        </div>
+        
+        <div id="today">
+            <h2 id="city"></h2>
+            <p id="icon"></p>
+            <p id="weather"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uv"></p>
+        </div>
+        
+        <div>
+            <h2>5 Day Forcast</h2>
+            <div id="day0" class="forecast">
+                <h3 id="date0"></h3>
+                <p id="icon0"></p>
+                <p id="weather0"></p>
+                <p id="humidity0"></p>
+            </div>
+            <div id="day1" class="forecast">
+                <h3 id="date1"></h3>
+                <p id="icon1"></p>
+                <p id="weather1"></p>
+                <p id="humidity1"></p>
+            </div>
+            <div id="day2" class="forecast">
+                <h3 id="date2"></h3>
+                <p id="icon2"></p>
+                <p id="weather2"></p>
+                <p id="humidity2"></p>
+            </div>
+            <div id="day3" class="forecast">
+                <h3 id="date3"></h3>
+                <p id="icon3"></p>
+                <p id="weather3"></p>
+                <p id="humidity3"></p>
+            </div>
+            <div id="day4" class="forecast">
+                <h3 id="date4"></h3>
+                <p id="icon4"></p>
+                <p id="weather4"></p>
+                <p id="humidity4"></p>
+            </div>
+        </div>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./Assets/script.js"></script>
+</body>
+
+</html>
