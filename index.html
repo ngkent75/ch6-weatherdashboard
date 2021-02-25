@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./Assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
@@ -42,46 +42,52 @@
                     <p id="humidity"></p>
                     <p id="wind"></p>
                     <p id="uv"></p>
+                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
                 </div>
 
                 <div class="row content d-flex justify-content-between">
-                    <h2 class="col-12">5 Day Forcast</h2>
-                    <div id="day0" class="col-2 bg-light border border-primary rounded">
+                    <h2 id="fiveDay" class="col-12 border-bottom"></h2>
+                    <div id="day0" class="col-2 bg-white border border-white rounded day">
                         <h3 id="date0"></h3>
                         <p id="icon0"></p>
                         <p id="weather0"></p>
                         <p id="humidity0"></p>
+                        <div id="icon0"><img id="wicon0" src="" alt="Weather icon"></div>
                     </div>
-                    <div id="day1" class="col-2 bg-light border border-primary rounded">
+                    <div id="day1" class="col-2 bg-white border border-white rounded day">
                         <h3 id="date1"></h3>
                         <p id="icon1"></p>
                         <p id="weather1"></p>
                         <p id="humidity1"></p>
+                        <div id="icon1"><img id="wicon1" src="" alt="Weather icon"></div>
                     </div>
-                    <div id="day2" class="col-2 bg-light border border-primary rounded">
+                    <div id="day2" class="col-2 bg-white border border-white rounded day">
                         <h3 id="date2"></h3>
                         <p id="icon2"></p>
                         <p id="weather2"></p>
                         <p id="humidity2"></p>
+                        <div id="icon2"><img id="wicon2" src="" alt="Weather icon"></div>
                     </div>
-                    <div id="day3" class="col-2 bg-light border border-primary rounded">
+                    <div id="day3" class="col-2 bg-white border border-white rounded day">
                         <h3 id="date3"></h3>
                         <p id="icon3"></p>
                         <p id="weather3"></p>
                         <p id="humidity3"></p>
+                        <div id="icon3"><img id="wicon3" src="" alt="Weather icon"></div>
                     </div>
-                    <div id="day4" class="col-2 bg-light border border-primary rounded">
+                    <div id="day4" class="col-2 bg-white border border-white rounded day">
                         <h3 id="date4"></h3>
                         <p id="icon4"></p>
                         <p id="weather4"></p>
                         <p id="humidity4"></p>
+                        <div id="icon4"><img id="wicon4" src="" alt="Weather icon"></div>
                     </div>
                 </div>
             </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Assets/script.js"></script>
+    <script src="./assets/script.js"></script>
 
 </body>
 

@@ -10,7 +10,9 @@ var forecastURL;
 var lat = 35;
 var lon = -80;
 var uvURL;
-
+var symURL;
+var symi
+var symiURL
 
 // Fires when form is submitted. Takes in city the user inputs and assigns it to the URL
 var formSubmitHandler = function (event) {
@@ -47,8 +49,15 @@ function fetchCity() {
             // fetch request for UV index. Had to be nested due to the fetches being asynchronous and setting the variables after they are referenced for the URL
             uvURL = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appKey;
             fetchuvURL();
+            sym = data.weather[0].icon
+            symURL = ' http://openweathermap.org/img/wn/' + sym + '@2x.png'
+            document.getElementById('wicon').setAttribute('src', symURL)
         });
 }
+
+
+
+
 // fetches info for UV index and changes content to reflect
 function fetchuvURL() {
     fetch(uvURL)
@@ -58,6 +67,13 @@ function fetchuvURL() {
         .then(function (data) {
             var uvEl = document.querySelector('#uv')
             uvEl.textContent = 'UV Index: ' + parseFloat(data.value)
+            if (parseFloat(data.value) <= 3) {
+                document.getElementById('uv').setAttribute('style', 'background-color: green')
+            } else if (parseFloat(data.value) <= 6) {
+                document.getElementById('uv').setAttribute('style', 'background-color: yellow')
+            } else {
+                document.getElementById('uv').setAttribute('style', 'background-color: red')
+            }
             fetchForecast()
         });
 }
@@ -70,6 +86,8 @@ function fetchForecast() {
     })
     .then(function (data) {
         // for loop to generate each of the days of the forcast
+        var fiveDay = document.querySelector('#fiveDay');
+        fiveDay.textContent = '5 Day Forecast'
         for (let i = 0; i <= 4; i++) {
             var dateEl = document.querySelector('#date' + [i]);
             var weatherEl = document.querySelector('#weather' + [i]);
@@ -78,11 +96,16 @@ function fetchForecast() {
             dateEl.textContent = moment().add(i + 1, 'd').format('MM DD YYYY');
             weatherEl.textContent = 'Temperature: ' + parseInt(data.list[i].main.temp) + '\u00B0 F';
             humidityEl.textContent = 'Humidity: ' + parseInt(data.list[i].main.humidity) + '%';
+            symi = data.list[i].weather[0].icon
+            symiURL = ' http://openweathermap.org/img/wn/' + symi + '@2x.png'
+            document.getElementById('wicon' + i).setAttribute('src', symiURL)
         }
     });
 }
-
+// initializer that gets the local storage and updates the search history
 function init() {
+
+
     var storedHistory = JSON.parse(localStorage.getItem('history'))
 
     if (storedHistory !== null) {
@@ -103,7 +126,6 @@ function init() {
 
 function storeHistory() {
     arr.push(city)
-    console.log(arr);
     localStorage.setItem('history', JSON.stringify(arr))
     return;
 }
