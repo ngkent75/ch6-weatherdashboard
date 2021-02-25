@@ -10,59 +10,79 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <h1>Weather Dashboard</h1>
-        
-        <div>
-            <h2>Search goes here</h2>
-        </div>
-        
-        <div id="today">
-            <h2 id="city"></h2>
-            <p id="icon"></p>
-            <p id="weather"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
-            <p id="uv"></p>
-        </div>
-        
-        <div>
-            <h2>5 Day Forcast</h2>
-            <div id="day0" class="forecast">
-                <h3 id="date0"></h3>
-                <p id="icon0"></p>
-                <p id="weather0"></p>
-                <p id="humidity0"></p>
+    <main class="container-fluid">
+        <div class="row content">
+
+            <div class="col-12 row content">
+                <h1 class="col-3 bg-primary border border-dark rounded-right mt-1">Weather Dashboard</h1>
             </div>
-            <div id="day1" class="forecast">
-                <h3 id="date1"></h3>
-                <p id="icon1"></p>
-                <p id="weather1"></p>
-                <p id="humidity1"></p>
+
+            <div class="col-4 mt-1">
+                <div class="card">
+                    <h3 class="card-header text-uppercase">Search for a City:</h3>
+                    <form id="user-form" class="card-body">
+                      <label class="form-label" for="city">City:</label>
+                      <input name="cityForm" id="cityForm" type="text" autofocus="true" class="form-input" />
+                      <button type="submit" class="btn bg-primary border border-dark rounded">Search City</button>
+                    </form>
+                </div>
+
+                <ul id="historyList">
+
+                </ul>
             </div>
-            <div id="day2" class="forecast">
-                <h3 id="date2"></h3>
-                <p id="icon2"></p>
-                <p id="weather2"></p>
-                <p id="humidity2"></p>
+
+            <div class="col-8">
+
+                <div id="today" class="col-12">
+                    <h2 id="city"></h2>
+                    <p id="icon"></p>
+                    <p id="weather"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="uv"></p>
+                </div>
+
+                <div class="row content d-flex justify-content-between">
+                    <h2 class="col-12">5 Day Forcast</h2>
+                    <div id="day0" class="col-2 bg-light border border-primary rounded">
+                        <h3 id="date0"></h3>
+                        <p id="icon0"></p>
+                        <p id="weather0"></p>
+                        <p id="humidity0"></p>
+                    </div>
+                    <div id="day1" class="col-2 bg-light border border-primary rounded">
+                        <h3 id="date1"></h3>
+                        <p id="icon1"></p>
+                        <p id="weather1"></p>
+                        <p id="humidity1"></p>
+                    </div>
+                    <div id="day2" class="col-2 bg-light border border-primary rounded">
+                        <h3 id="date2"></h3>
+                        <p id="icon2"></p>
+                        <p id="weather2"></p>
+                        <p id="humidity2"></p>
+                    </div>
+                    <div id="day3" class="col-2 bg-light border border-primary rounded">
+                        <h3 id="date3"></h3>
+                        <p id="icon3"></p>
+                        <p id="weather3"></p>
+                        <p id="humidity3"></p>
+                    </div>
+                    <div id="day4" class="col-2 bg-light border border-primary rounded">
+                        <h3 id="date4"></h3>
+                        <p id="icon4"></p>
+                        <p id="weather4"></p>
+                        <p id="humidity4"></p>
+                    </div>
+                </div>
             </div>
-            <div id="day3" class="forecast">
-                <h3 id="date3"></h3>
-                <p id="icon3"></p>
-                <p id="weather3"></p>
-                <p id="humidity3"></p>
-            </div>
-            <div id="day4" class="forecast">
-                <h3 id="date4"></h3>
-                <p id="icon4"></p>
-                <p id="weather4"></p>
-                <p id="humidity4"></p>
-            </div>
-        </div>
-            
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./Assets/script.js"></script>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./Assets/script.js"></script>
+
 </body>
 
 </html>
